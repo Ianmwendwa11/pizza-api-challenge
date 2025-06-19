@@ -8,6 +8,5 @@ class RestaurantPizza(db.Model):
     restaurant_id = db.Column(db.Integer, db.ForeignKey('restaurants.id'), nullable=False)
     pizza_id = db.Column(db.Integer, db.ForeignKey('pizzas.id'), nullable=False)
 
-    # Validation (you can later add Marshmallow schema or validate in controller)
     def validate(self):
         return 1 <= self.price <= 30
